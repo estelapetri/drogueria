@@ -1,0 +1,13 @@
+{% extends 'Drogueria/base.html' %}
+{% block titulo%} Alta de nuevo Medicamento {% endblock %}
+{% block contenido %}
+
+  <form action="/medicamento/alta" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Guardar">
+  </form>
+
+  <h2 style="color:#76d876">{{msg_exito}}</h2>
+  <a href="medicamento">Volver a la lista de Medicamento</a>
+  {% endblock %}
